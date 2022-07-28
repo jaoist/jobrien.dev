@@ -1,0 +1,8 @@
+{% if blog_posts %}
+    {% for bp in blog_posts %}
+    <p>{{ bp.title }} - {{ bp.pub_date }}</p>
+    <p>{{ bp.body }}</p>
+    {% endfor %}
+{% else %}
+    <p>No posts available.</p>
+{% endif %}
