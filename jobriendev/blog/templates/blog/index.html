@@ -1,8 +1,18 @@
+<h1>Justin O'Brien</h1>
+
+<h2>About</h2>
+<p>This is where I would say a few words about myself, if I cared to.</p>
+
+<h2>Posts</h2>
 {% if blog_posts %}
+    <ul>
     {% for bp in blog_posts %}
-    <p>{{ bp.title }} - {{ bp.pub_date }}</p>
-    <p>{{ bp.body }}</p>
+        <li>
+            <p><time>{{ bp.pub_date }}</time> - {{ bp.title }}</p>
+            <p>{{ bp.body }}</p>
+        </li>
     {% endfor %}
+    <ul>
 {% else %}
     <p>No posts available.</p>
 {% endif %}
