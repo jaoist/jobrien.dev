@@ -7,7 +7,7 @@ class BlogPostForm(forms.ModelForm):
         model = BlogPost
         fields = "__all__"
     
-    body = forms.CharField(widget=forms.Textarea)
+    content = forms.CharField(widget=forms.Textarea)
 
 # Register your models here.
 class BlogPostAdmin(admin.ModelAdmin):

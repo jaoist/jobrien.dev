@@ -1,18 +1,30 @@
-<h1>Justin O'Brien</h1>
+<body>
+    <header>
+        <p>Justin O'Brien</p>
 
-<h2>About</h2>
-<p>This is where I would say a few words about myself, if I cared to.</p>
-
-<h2>Posts</h2>
-{% if blog_posts %}
-    <ul>
-    {% for bp in blog_posts %}
-        <li>
-            <p><time>{{ bp.pub_date }}</time> - {{ bp.title }}</p>
-            <p>{{ bp.body }}</p>
-        </li>
-    {% endfor %}
-    <ul>
-{% else %}
-    <p>No posts available.</p>
-{% endif %}
+        <p>About<p>
+        <p>This is where I would say a few words about myself, if I cared to.</p>
+    </header>
+    <main>
+        <div class="latest-post">
+            <p>Latest post:</p>
+            {% if blog_posts %}
+                <p>{{ blog_posts.0.content }}</p>
+            {% endif %}
+        </div>
+        <div class="post-list">
+            <p>Posts:</p>
+            {% if blog_posts %}
+                <ul>
+                    {% for bp in blog_posts %}
+                        <li>
+                            <p><a href="{% url 'blog:detail' bp.id %}"><time>{{ bp.pub_date }}</time> - {{ bp.title }}</a></p>
+                        </li>
+                    {% endfor %}
+                <ul>
+            {% else %}
+                <p>No posts available.</p>
+            {% endif %}
+        </div>
+    <main>
+</body>
