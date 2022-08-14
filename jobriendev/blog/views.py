@@ -19,7 +19,13 @@ class IndexView(ListView):
         """
         return BlogPost.objects.all().order_by('-pub_date')
 
-class DetailView(DetailView):
-    
-    model = BlogPost
+class DetailView(DetailView):    
     template_name = "blog/detail.html"
+    model = BlogPost
+
+    # This method creates a context dictionary.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["post_count"] = BlogPost.objects.count()
+        return context
+    

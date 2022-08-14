@@ -1,4 +1,18 @@
 <body>
     <p><time>{{ object.pub_date }}</time> - {{ object.title }}</p>
     <p>{{ object.content | safe | linebreaks }}</p>
+    {% if object.pk > 1 %}
+        <div>        
+            <a href="{% url 'blog:detail' object.pk|add:"-1" %}">
+                <button type="button">previous</button>
+            </a>
+        <div>
+    {% endif %}
+    {% if object.pk < post_count %}
+        <div>
+            <a href="{% url 'blog:detail' object.pk|add:"1" %}">
+                <button type="button">next</button>
+            </a>
+        </div>           
+    {% endif %}
 </body>

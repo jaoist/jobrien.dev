@@ -9,7 +9,7 @@
         <div class="latest-post">
             <p>Latest post:</p>
             {% if blog_posts %}
-                <p>{{ blog_posts.0.content }}</p>
+                <p>{{ blog_posts.0.content | safe | linebreaks}}</p>
             {% endif %}
         </div>
         <div class="post-list">
