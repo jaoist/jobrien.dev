@@ -28,4 +28,3 @@ class DetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["post_count"] = BlogPost.objects.count()
         return context
-    

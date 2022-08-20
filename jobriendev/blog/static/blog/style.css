@@ -1,0 +1,21 @@
+body {
+    max-width: 60rem;
+    min-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15%;
+    color: #272727;
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+h1, h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a {
+    color: hotpink;
+}

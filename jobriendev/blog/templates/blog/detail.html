@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+
 <body>
     <p><time>{{ object.pub_date }}</time> - {{ object.title }}</p>
     <p>{{ object.content | safe | linebreaks }}</p>
