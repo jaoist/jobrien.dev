@@ -33,8 +33,24 @@ a {
     color: hotpink;
 }
 
+nav a {
+    color: #3d3d3d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgb(105, 145, 255);
+}
+
 .top-nav {
-    margin-right: 3rem;
+    background-color: white;
+    padding-right: 3rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
 }
 
 .horizontal-list {

@@ -20,21 +20,22 @@
     </header>
     <main>
         <h1>Justin O'Brien</h1>
+        <p>Software Developer</p>
         <h2>About</h2>
         <p>Howdy! My name is Justin, welcome to my personal website and blog.
             I'm a software developer working primarily with GIS and web applications.
             Aside from that, I enjoy playing and making video games, hiking, travel,
             and even a bit of gardening.            
         </p>
-        <div class="latest-post">
+        <section class="latest-post">
             <h3>Latest post:</h3>
             <article>
                 {% if blog_posts %}
                     <p>{{ blog_posts.0.content | safe | linebreaks}}</p>
                 {% endif %}
             </article>
-        </div>
-        <div class="post-list">
+        </section>
+        <section class="post-list">
             <h3>Recent Posts:</h3>
             {% if blog_posts %}
                 <ul>
@@ -47,6 +48,6 @@
             {% else %}
                 <p>No posts available.</p>
             {% endif %}
-        </div>
+                </section>
     <main>
 </body>
