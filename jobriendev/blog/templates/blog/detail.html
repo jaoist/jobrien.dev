@@ -5,7 +5,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
 
 <body>
-    <p><time>{{ object.pub_date }}</time> - {{ object.title }}</p>
+    <time>{{ object.pub_date }}</time>
+    <p>{{ object.title }}</p>
     <p>{{ object.content | safe | linebreaks }}</p>
     {% if object.pk > 1 %}
         <div>        

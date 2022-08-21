@@ -4,8 +4,21 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
 
+<head>
+    <title>Justin O'Brien</title>
+</head>
+
 <body>
     <header>
+        <nav class="top-nav">
+            <ul class="horizontal-list">
+                <li><a href="https://twitter.com">Twitter</a></li>
+                <li><a href="https://linkedin.com/in/justinaobrien">LinkedIn</a></li>
+                <li><a href="https://github.com/jaoist/">GitHub</a></li>
+            </ul>            
+        </nav>
+    </header>
+    <main>
         <h1>Justin O'Brien</h1>
         <h2>About</h2>
         <p>Howdy! My name is Justin, welcome to my personal website and blog.
@@ -13,16 +26,16 @@
             Aside from that, I enjoy playing and making video games, hiking, travel,
             and even a bit of gardening.            
         </p>
-    </header>
-    <main>
         <div class="latest-post">
-            <p>Latest post:</p>
-            {% if blog_posts %}
-                <p>{{ blog_posts.0.content | safe | linebreaks}}</p>
-            {% endif %}
+            <h3>Latest post:</h3>
+            <article>
+                {% if blog_posts %}
+                    <p>{{ blog_posts.0.content | safe | linebreaks}}</p>
+                {% endif %}
+            </article>
         </div>
         <div class="post-list">
-            <p>Posts:</p>
+            <h3>Recent Posts:</h3>
             {% if blog_posts %}
                 <ul>
                     {% for bp in blog_posts %}
