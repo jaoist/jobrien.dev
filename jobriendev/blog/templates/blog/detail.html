@@ -1,25 +1,37 @@
-<!DOCTYPE html>
-
 {% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
-
-<body>
-    <time>{{ object.pub_date }}</time>
-    <p>{{ object.title }}</p>
-    <p>{{ object.content | safe | linebreaks }}</p>
-    {% if object.pk > 1 %}
-        <div>        
-            <a href="{% url 'blog:detail' object.pk|add:"-1" %}">
-                <button type="button">previous</button>
-            </a>
-        <div>
-    {% endif %}
-    {% if object.pk < post_count %}
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+</head>
+<html>
+    <body>
+        <header>
+            <nav class="top-nav">
+                <ul class="horizontal-list">
+                    <li><a href="https://twitter.com">Twitter</a></li>
+                    <li><a href="https://linkedin.com/in/justinaobrien">LinkedIn</a></li>
+                    <li><a href="https://github.com/jaoist/">GitHub</a></li>
+                </ul>            
+            </nav>
+        </header>
+        <main>
+            <time>{{ object.pub_date }}</time>
+            <p>{{ object.title }}</p>
+            <p>{{ object.content | safe | linebreaks }}</p>
+            {% if object.pk > 1 %}
+                <div>        
+                    <a href="{% url 'blog:detail' object.pk|add:"-1" %}">
+                        <button type="button">previous</button>
+                    </a>
+                <div>
+            {% endif %}
+        </main>
+        {% if object.pk < post_count %}
         <div>
             <a href="{% url 'blog:detail' object.pk|add:"1" %}">
                 <button type="button">next</button>
             </a>
         </div>           
-    {% endif %}
-</body>
+        {% endif %}    
+    </body>
+</html>
