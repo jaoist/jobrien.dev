@@ -21,10 +21,11 @@
             <h1>Justin O'Brien</h1>
             <p>Software Developer</p>
             <h2>About</h2>
-            <p>Howdy! My name is Justin, welcome to my personal website and blog.
+            <p>
+                Howdy! My name is Justin, this is my personal website and blog.
                 I'm a software developer working primarily with GIS and web applications.
                 Aside from that, I enjoy playing and making video games, hiking, travel,
-                and even a bit of gardening.            
+                and even a bit of gardening.
             </p>
             <section class="latest-post">
                 <h3>Latest post:</h3>
@@ -40,8 +41,8 @@
                     <ul class="post-list">
                         {% for bp in blog_posts %}
                             <li>
-                                <time>{{ bp.pub_date }}</time>
-                                <a href="{% url 'blog:detail' bp.id %}">{{ bp.title }}</a>
+                                <time class="span-2">{{ bp.pub_date }}</time>
+                                <a  class="span-10" href="{% url 'blog:detail' bp.id %}">{{ bp.title }}</a>
                             </li>
                         {% endfor %}
                     <ul>
