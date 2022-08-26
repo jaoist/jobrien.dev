@@ -41,7 +41,7 @@
                     <ul class="post-list">
                         {% for bp in blog_posts %}
                             <li>
-                                <time class="span-2">{{ bp.pub_date }}</time>
+                                <time class="span-2">{{ bp.pub_date|date:'Y.m.d' }}</time>
                                 <a  class="span-10" href="{% url 'blog:detail' bp.id %}">{{ bp.title }}</a>
                             </li>
                         {% endfor %}
@@ -49,7 +49,7 @@
                 {% else %}
                     <p>No posts available.</p>
                 {% endif %}
-                    </section>
+            </section>
         <main>
     </body>
 </html>

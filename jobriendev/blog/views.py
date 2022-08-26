@@ -17,7 +17,8 @@ class IndexView(ListView):
         Return blog posts ordered by publish date. This will allow displaying
         the latest post by indexing the first item.
         """
-        return BlogPost.objects.all().order_by('-pub_date')
+        blog_posts = BlogPost.objects.all().order_by('-pub_date')
+        return blog_posts
 
 class DetailView(DetailView):    
     template_name = "blog/detail.html"
