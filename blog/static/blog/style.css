@@ -6,11 +6,15 @@ html {
 header {
     margin-left: 10%;
     min-height: 6em;
-    background: rgb(131,58,180);
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+#header-name {
+    margin-left: 2rem;
+    min-inline-size: fit-content;
 }
 
 body {
@@ -53,6 +57,7 @@ nav a:hover {
     padding-right: 3rem;
     padding-top: 0.75rem;
     padding-bottom: 0.5rem;
+    margin-left: 2rem;
 }
 
 .horizontal-list {
