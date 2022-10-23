@@ -7,7 +7,7 @@
     </head>
     <body>
         <header>
-            <h1 id="header-name">Justin O'Brien</h1>
+            <h1 id="header-name"><a href="{% url 'blog:index' %}">Justin O'Brien</a></h1>
             <nav class="top-nav">                
                 <ul class="horizontal-list">
                     <li><a href="https://twitter.com">Twitter</a></li>
@@ -28,5 +28,9 @@
                 <a class="older" href="{% url 'blog:detail' object.pk|add:"-1" %}">older</a>
             {% endif %}
             </div>
+        </main>
+        <footer>
+            <p>Copyright 2022 Justin O'Brien</p>
+        </footer>
     </body>
 </html>
